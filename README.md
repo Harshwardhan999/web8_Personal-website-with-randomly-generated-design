@@ -1,1 +1,0 @@
-# IITISoC--Personal-website----Randomly-generated-design
