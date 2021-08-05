@@ -25,7 +25,7 @@ function GetCssSheet(num) {
   }
   if (num === 5) 
   {
-    document.getElementById('css_sheet').setAttribute('href', `./style/${num}/${num}.css`);
+    document.getElementById('css_sheet').setAttribute('href', `./style/${num}/${num}.css`);git
   }
     
   

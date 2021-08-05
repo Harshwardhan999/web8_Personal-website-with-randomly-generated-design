@@ -46,7 +46,7 @@ section{
 }
 
 .animated-text h3{
-  color: #4e9eff;
+  color: #3a6cf4;
   font-size: 3em;
   font-weight: 700;
   line-height: 70px;
@@ -216,6 +216,7 @@ body{
   position: relative;
   width: 100%;
   min-height: 450px;
+  box-shadow: 0 5px 25px rgba(1 1 1 / 30%);
 }
 
 .about .content .col-left .img-card img{
@@ -372,7 +373,8 @@ body{
 }
 
 .work{
-  background: #000016;
+  background-color: lavender;
+
 }
 
 .work .content{
@@ -394,6 +396,7 @@ body{
   height: 260px;
   overflow: hidden;
   border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(1 1 1 / 70%);
 }
 
 .work .content .card .card-img img{
@@ -409,6 +412,9 @@ body{
 
 .work .content .card .card-img img:hover{
   transform: scale(1.2);
+}
+.contact{
+  background-color: black;
 }
 
 .contact .content{
@@ -559,7 +565,7 @@ body{
   header .navigation.active{
     z-index: 888;
     position: fixed;
-    background: #fff;
+    background: darkorange;
     top: 0;
     right: 0;
     width: 380px;
@@ -588,11 +594,11 @@ body{
 
   .menu-btn{
     position: absolute;
-    background: url(images/menu.png)no-repeat;
+    background: url(menu.png)no-repeat;
     background-size: 30px;
     background-position: center;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     right: 0;
     margin: 0 20px;
     cursor: pointer;
@@ -601,8 +607,8 @@ body{
 
   .menu-btn.active{
     z-index: 999;
-    background: url(images/close.png)no-repeat;
-    background-size: 25px;
+    background: url(close.png)no-repeat;
+    background-size: 30px;
     background-position: center;
     transition: 0.3s ease;
     filter: invert(1);
