@@ -1,9 +1,9 @@
 const num= Math.floor(Math.random()*8);
 console.log(num);
-// const num = 0;
+ 
 function GetCssSheet(num) {
-  
- if (num === 0) {
+
+  if (num === 0) {
 
     document.getElementsByTagName("title")[0].innerHTML = `Vishal - Personal Website`;
     document.getElementById('css_sheet').setAttribute('href', `./style/${num}/${num}.css`);
@@ -48,9 +48,9 @@ function GetCssSheet(num) {
   </div>
   <a href="#work" class="btn">See My Work</a>
   <div class="media-icons">
-    <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
-    <a href="www.instagram.com"><i class="fab fa-instagram"></i></a>
-    <a href="www.twitter.com"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
   </div>
 </div>
 </section>
@@ -221,138 +221,138 @@ function GetCssSheet(num) {
     // document.querySelector("#footer").remove();
 
     $(document).ready(function () {
-        //javascript for navigation bar effects on scroll
-        window.addEventListener("scroll", function () {
-            const header = document.querySelector("header");
-            header.classList.toggle('sticky', window.scrollY > 0);
+      //javascript for navigation bar effects on scroll
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        header.classList.toggle('sticky', window.scrollY > 0);
+      });
+
+      //javascript for responsive navigation sidebar menu
+      const menuBtn = document.querySelector(".menu-btn");
+      const navigation = document.querySelector(".navigation");
+      const navigationItems = document.querySelectorAll(".navigation a")
+
+      menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+      });
+
+      navigationItems.forEach((navigationItem) => {
+        navigationItem.addEventListener("click", () => {
+          menuBtn.classList.remove("active");
+          navigation.classList.remove("active");
         });
+      });
 
-        //javascript for responsive navigation sidebar menu
-        const menuBtn = document.querySelector(".menu-btn");
-        const navigation = document.querySelector(".navigation");
-        const navigationItems = document.querySelectorAll(".navigation a")
+      //javascript for scroll to top button
+      const scrollBtn = document.querySelector(".scrollToTop-btn");
 
-        menuBtn.addEventListener("click", () => {
-            menuBtn.classList.toggle("active");
-            navigation.classList.toggle("active");
-        });
+      window.addEventListener("scroll", function () {
+        scrollBtn.classList.toggle("active", window.scrollY > 500);
+      });
 
-        navigationItems.forEach((navigationItem) => {
-            navigationItem.addEventListener("click", () => {
-                menuBtn.classList.remove("active");
-                navigation.classList.remove("active");
-            });
-        });
+      //javascript for scroll back to top on click scroll-to-top button
+      scrollBtn.addEventListener("click", () => {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      });
 
-        //javascript for scroll to top button
-        const scrollBtn = document.querySelector(".scrollToTop-btn");
+      //javascript for reveal website elements on scroll
+      window.addEventListener("scroll", reveal);
 
-        window.addEventListener("scroll", function () {
-            scrollBtn.classList.toggle("active", window.scrollY > 500);
-        });
+      function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
 
-        //javascript for scroll back to top on click scroll-to-top button
-        scrollBtn.addEventListener("click", () => {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        });
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var revealTop = reveals[i].getBoundingClientRect().top;
+          var revealPoint = 50;
 
-        //javascript for reveal website elements on scroll
-        window.addEventListener("scroll", reveal);
-
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var revealTop = reveals[i].getBoundingClientRect().top;
-                var revealPoint = 50;
-
-                 if (revealTop < windowHeight - revealPoint) {
-                    reveals[i].classList.add("active");
-                }
-            }
+          if (revealTop < windowHeight - revealPoint) {
+            reveals[i].classList.add("active");
+          }
         }
+      }
     }
-        // $(document).ready(function () {
-        //   $(window).scroll(function () {
-        //     // sticky navbar on scroll script
-        //     else if (this.scrollY > 20) {
-        //       $('.navbar').addClass("sticky");
-        //     } else {
-        //       $('.navbar').removeClass("sticky")
-        //     }
+      // $(document).ready(function () {
+      //   $(window).scroll(function () {
+      //     // sticky navbar on scroll script
+      //     else if (this.scrollY > 20) {
+      //       $('.navbar').addClass("sticky");
+      //     } else {
+      //       $('.navbar').removeClass("sticky")
+      //     }
 
-        //     // scroll-up button show/hide script
-        //     else if (this.scrollY > 500) {
-        //       $('.scroll-up-btn').addClass("show");
-        //     } else {
-        //       $('.scroll-up-btn').removeClass("show");
-        //     }
-        //   });
+      //     // scroll-up button show/hide script
+      //     else if (this.scrollY > 500) {
+      //       $('.scroll-up-btn').addClass("show");
+      //     } else {
+      //       $('.scroll-up-btn').removeClass("show");
+      //     }
+      //   });
 
-        //   // slide-up script
-        //   $('.scroll-up-btn').click(function () {
-        //     $('html').animate({ scrollTop: 0 });
-        //     // removing smooth scroll on slide-up button click
-        //     $('html').css("scrollBehavior", "auto");
-        //   });
+      //   // slide-up script
+      //   $('.scroll-up-btn').click(function () {
+      //     $('html').animate({ scrollTop: 0 });
+      //     // removing smooth scroll on slide-up button click
+      //     $('html').css("scrollBehavior", "auto");
+      //   });
 
-        //   $('.navbar .menu li a').click(function () {
-        //     // applying again smooth scroll on menu items click
-        //     $('html').css("scrollBehavior", "smooth");
-        //   });
+      //   $('.navbar .menu li a').click(function () {
+      //     // applying again smooth scroll on menu items click
+      //     $('html').css("scrollBehavior", "smooth");
+      //   });
 
-        //   // toggle menu/navbar script
-        //   $('.menu-btn').click(function () {
-        //     $('.navbar .menu').toggleClass("active");
-        //     $('.menu-btn i').toggleClass("active");
-        //   });
+      //   // toggle menu/navbar script
+      //   $('.menu-btn').click(function () {
+      //     $('.navbar .menu').toggleClass("active");
+      //     $('.menu-btn i').toggleClass("active");
+      //   });
 
-        // typing text animation script
-        //   var typed = new Typed(".typing", {
-        //     strings: ["Web Developer", "Game Developer", "Hacker", "Designer"],
-        //     typeSpeed: 100,
-        //     backSpeed: 60,
-        //     loop: true
-        //   });
+      // typing text animation script
+      //   var typed = new Typed(".typing", {
+      //     strings: ["Web Developer", "Game Developer", "Hacker", "Designer"],
+      //     typeSpeed: 100,
+      //     backSpeed: 60,
+      //     loop: true
+      //   });
 
-        //   var typed = new Typed(".typing-2", {
-        //     strings: ["Web Developer", "Game Developer", "Hacker", "Designer"],
-        //     typeSpeed: 100,
-        //     backSpeed: 60,
-        //     loop: true
-        //   });
+      //   var typed = new Typed(".typing-2", {
+      //     strings: ["Web Developer", "Game Developer", "Hacker", "Designer"],
+      //     typeSpeed: 100,
+      //     backSpeed: 60,
+      //     loop: true
+      //   });
 
-        // owl carousel script
-        //   $('.carousel').owlCarousel({
-        //     margin: 20,
-        //     loop: true,
-        //     autoplay: true,
-        //     autoplayTimeOut: 2000,
-        //     autoplayHoverPause: true,
-        //     responsive: {
-        //       0: {
-        //         items: 1,
-        //         nav: false
-        //       },
-        //       600: {
-        //         items: 2,
-        //         nav: false
-        //       },
-        //       1000: {
-        //         items: 3,
-        //         nav: false
-        //       }
-        //     }
-        //   });
+      // owl carousel script
+      //   $('.carousel').owlCarousel({
+      //     margin: 20,
+      //     loop: true,
+      //     autoplay: true,
+      //     autoplayTimeOut: 2000,
+      //     autoplayHoverPause: true,
+      //     responsive: {
+      //       0: {
+      //         items: 1,
+      //         nav: false
+      //       },
+      //       600: {
+      //         items: 2,
+      //         nav: false
+      //       },
+      //       1000: {
+      //         items: 3,
+      //         nav: false
+      //       }
+      //     }
+      //   });
     );
-}
- else if (num === 1) {
+  }
+  else if (num === 1) {
 
-  document.getElementsByTagName("title")[0].innerHTML = `Harsh - Personal Website`;
-  document.getElementById('css_sheet').setAttribute('href', `./style/${num}/${num}.css`);
-  const headlink = `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    document.getElementsByTagName("title")[0].innerHTML = `Harsh - Personal Website`;
+    document.getElementById('css_sheet').setAttribute('href', `./style/${num}/${num}.css`);
+    const headlink = `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/script.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -360,14 +360,14 @@ function GetCssSheet(num) {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>`;
-  document.getElementById("css_sheet").insertAdjacentHTML("afterend", headlink);
+    document.getElementById("css_sheet").insertAdjacentHTML("afterend", headlink);
 
-  // const scrhead=`<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  // <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
-  // <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>`;
-  // document.querySelector("footer").insertAdjacentHTML("afterend",scrhead);
+    // const scrhead=`<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    // <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    // <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>`;
+    // document.querySelector("footer").insertAdjacentHTML("afterend",scrhead);
 
-  const bodycnt = ` <div class="scrollToTop-btn">
+    const bodycnt = ` <div class="scrollToTop-btn">
 <i class="fas fa-angle-up"></i>
 </div>
 
@@ -393,9 +393,9 @@ function GetCssSheet(num) {
 </div>
 <a href="#work" class="btn">See My Work</a>
 <div class="media-icons">
-  <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
-  <a href="www.instagram.com"><i class="fab fa-instagram"></i></a>
-  <a href="www.twitter.com"><i class="fab fa-twitter"></i></a>
+  <a href="#"><i class="fab fa-facebook-f"></i></a>
+  <a href="#"><i class="fab fa-instagram"></i></a>
+  <a href="#"><i class="fab fa-twitter"></i></a>
 </div>
 </div>
 </section>
@@ -560,16 +560,16 @@ function GetCssSheet(num) {
 </section>
 
 `;
-  document.getElementById("home").insertAdjacentHTML("afterbegin", bodycnt);
-  // document.querySelectorAll(".navbar")[1].remove();
-  // document.querySelector(".whole").remove();
-  // document.querySelector("#footer").remove();
+    document.getElementById("home").insertAdjacentHTML("afterbegin", bodycnt);
+    // document.querySelectorAll(".navbar")[1].remove();
+    // document.querySelector(".whole").remove();
+    // document.querySelector("#footer").remove();
 
-  $(document).ready(function () {
+    $(document).ready(function () {
       //javascript for navigation bar effects on scroll
       window.addEventListener("scroll", function () {
-          const header = document.querySelector("header");
-          header.classList.toggle('sticky', window.scrollY > 0);
+        const header = document.querySelector("header");
+        header.classList.toggle('sticky', window.scrollY > 0);
       });
 
       //javascript for responsive navigation sidebar menu
@@ -578,47 +578,47 @@ function GetCssSheet(num) {
       const navigationItems = document.querySelectorAll(".navigation a")
 
       menuBtn.addEventListener("click", () => {
-          menuBtn.classList.toggle("active");
-          navigation.classList.toggle("active");
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
       });
 
       navigationItems.forEach((navigationItem) => {
-          navigationItem.addEventListener("click", () => {
-              menuBtn.classList.remove("active");
-              navigation.classList.remove("active");
-          });
+        navigationItem.addEventListener("click", () => {
+          menuBtn.classList.remove("active");
+          navigation.classList.remove("active");
+        });
       });
 
       //javascript for scroll to top button
       const scrollBtn = document.querySelector(".scrollToTop-btn");
 
       window.addEventListener("scroll", function () {
-          scrollBtn.classList.toggle("active", window.scrollY > 500);
+        scrollBtn.classList.toggle("active", window.scrollY > 500);
       });
 
       //javascript for scroll back to top on click scroll-to-top button
       scrollBtn.addEventListener("click", () => {
-          document.body.scrollTop = 0;
-          document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
       });
 
       //javascript for reveal website elements on scroll
       window.addEventListener("scroll", reveal);
 
       function reveal() {
-          var reveals = document.querySelectorAll(".reveal");
+        var reveals = document.querySelectorAll(".reveal");
 
-          for (var i = 0; i < reveals.length; i++) {
-              var windowHeight = window.innerHeight;
-              var revealTop = reveals[i].getBoundingClientRect().top;
-              var revealPoint = 50;
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var revealTop = reveals[i].getBoundingClientRect().top;
+          var revealPoint = 50;
 
-             if (revealTop < windowHeight - revealPoint) {
-                  reveals[i].classList.add("active");
-              }
+          if (revealTop < windowHeight - revealPoint) {
+            reveals[i].classList.add("active");
           }
+        }
       }
-  }
+    }
       // $(document).ready(function () {
       //   $(window).scroll(function () {
       //     // sticky navbar on scroll script
@@ -691,13 +691,13 @@ function GetCssSheet(num) {
       //       }
       //     }
       //   });
-  );
-}
-else if (num === 2) {
+    );
+  }
+  else if (num === 2) {
 
-  document.getElementsByTagName("title")[0].innerHTML = `Harsh - Personal Website`;
-  document.getElementById('css_sheet').setAttribute('href', `./style/${num}/${num}.css`);
-  const headlink = `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    document.getElementsByTagName("title")[0].innerHTML = `Harsh - Personal Website`;
+    document.getElementById('css_sheet').setAttribute('href', `./style/${num}/${num}.css`);
+    const headlink = `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/script.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -705,14 +705,14 @@ else if (num === 2) {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>`;
-  document.getElementById("css_sheet").insertAdjacentHTML("afterend", headlink);
+    document.getElementById("css_sheet").insertAdjacentHTML("afterend", headlink);
 
-  // const scrhead=`<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  // <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
-  // <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>`;
-  // document.querySelector("footer").insertAdjacentHTML("afterend",scrhead);
+    // const scrhead=`<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    // <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    // <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>`;
+    // document.querySelector("footer").insertAdjacentHTML("afterend",scrhead);
 
-  const bodycnt = ` <div class="scrollToTop-btn">
+    const bodycnt = ` <div class="scrollToTop-btn">
 <i class="fas fa-angle-up"></i>
 </div>
 
@@ -738,9 +738,9 @@ else if (num === 2) {
 </div>
 <a href="#work" class="btn">See My Work</a>
 <div class="media-icons">
-  <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
-  <a href="www.instagram.com"><i class="fab fa-instagram"></i></a>
-  <a href="www.twitter.com"><i class="fab fa-twitter"></i></a>
+  <a href="#"><i class="fab fa-facebook-f"></i></a>
+  <a href="#"><i class="fab fa-instagram"></i></a>
+  <a href="#"><i class="fab fa-twitter"></i></a>
 </div>
 </div>
 </section>
@@ -905,16 +905,16 @@ else if (num === 2) {
 </section>
 
 `;
-  document.getElementById("home").insertAdjacentHTML("afterbegin", bodycnt);
-  // document.querySelectorAll(".navbar")[1].remove();
-  // document.querySelector(".whole").remove();
-  // document.querySelector("#footer").remove();
+    document.getElementById("home").insertAdjacentHTML("afterbegin", bodycnt);
+    // document.querySelectorAll(".navbar")[1].remove();
+    // document.querySelector(".whole").remove();
+    // document.querySelector("#footer").remove();
 
-  $(document).ready(function () {
+    $(document).ready(function () {
       //javascript for navigation bar effects on scroll
       window.addEventListener("scroll", function () {
-          const header = document.querySelector("header");
-          header.classList.toggle('sticky', window.scrollY > 0);
+        const header = document.querySelector("header");
+        header.classList.toggle('sticky', window.scrollY > 0);
       });
 
       //javascript for responsive navigation sidebar menu
@@ -923,47 +923,47 @@ else if (num === 2) {
       const navigationItems = document.querySelectorAll(".navigation a")
 
       menuBtn.addEventListener("click", () => {
-          menuBtn.classList.toggle("active");
-          navigation.classList.toggle("active");
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
       });
 
       navigationItems.forEach((navigationItem) => {
-          navigationItem.addEventListener("click", () => {
-              menuBtn.classList.remove("active");
-              navigation.classList.remove("active");
-          });
+        navigationItem.addEventListener("click", () => {
+          menuBtn.classList.remove("active");
+          navigation.classList.remove("active");
+        });
       });
 
       //javascript for scroll to top button
       const scrollBtn = document.querySelector(".scrollToTop-btn");
 
       window.addEventListener("scroll", function () {
-          scrollBtn.classList.toggle("active", window.scrollY > 500);
+        scrollBtn.classList.toggle("active", window.scrollY > 500);
       });
 
       //javascript for scroll back to top on click scroll-to-top button
       scrollBtn.addEventListener("click", () => {
-          document.body.scrollTop = 0;
-          document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
       });
 
       //javascript for reveal website elements on scroll
       window.addEventListener("scroll", reveal);
 
       function reveal() {
-          var reveals = document.querySelectorAll(".reveal");
+        var reveals = document.querySelectorAll(".reveal");
 
-          for (var i = 0; i < reveals.length; i++) {
-              var windowHeight = window.innerHeight;
-              var revealTop = reveals[i].getBoundingClientRect().top;
-              var revealPoint = 50;
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var revealTop = reveals[i].getBoundingClientRect().top;
+          var revealPoint = 50;
 
-              if (revealTop < windowHeight - revealPoint) {
-                  reveals[i].classList.add("active");
-              }
+          if (revealTop < windowHeight - revealPoint) {
+            reveals[i].classList.add("active");
           }
+        }
       }
-  }
+    }
       // $(document).ready(function () {
       //   $(window).scroll(function () {
       //     // sticky navbar on scroll script
@@ -1036,13 +1036,13 @@ else if (num === 2) {
       //       }
       //     }
       //   });
-  );
-}
-else if (num === 3) {
+    );
+  }
+  else if (num === 3) {
 
-  document.getElementsByTagName("title")[0].innerHTML = `Harsh - Personal Website`;
-  document.getElementById('css_sheet').setAttribute('href', `./style/${num}/${num}.css`);
-  const headlink = `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    document.getElementsByTagName("title")[0].innerHTML = `Harsh - Personal Website`;
+    document.getElementById('css_sheet').setAttribute('href', `./style/${num}/${num}.css`);
+    const headlink = `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/script.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -1050,14 +1050,14 @@ else if (num === 3) {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>`;
-  document.getElementById("css_sheet").insertAdjacentHTML("afterend", headlink);
+    document.getElementById("css_sheet").insertAdjacentHTML("afterend", headlink);
 
-  // const scrhead=`<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  // <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
-  // <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>`;
-  // document.querySelector("footer").insertAdjacentHTML("afterend",scrhead);
+    // const scrhead=`<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    // <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    // <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>`;
+    // document.querySelector("footer").insertAdjacentHTML("afterend",scrhead);
 
-  const bodycnt = ` <div class="scrollToTop-btn">
+    const bodycnt = ` <div class="scrollToTop-btn">
 <i class="fas fa-angle-up"></i>
 </div>
 
@@ -1083,9 +1083,9 @@ else if (num === 3) {
 </div>
 <a href="#work" class="btn">See My Work</a>
 <div class="media-icons">
-  <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
-  <a href="www.instagram.com"><i class="fab fa-instagram"></i></a>
-  <a href="www.twitter.com"><i class="fab fa-twitter"></i></a>
+  <a href="#"><i class="fab fa-facebook-f"></i></a>
+  <a href="#"><i class="fab fa-instagram"></i></a>
+  <a href="#"><i class="fab fa-twitter"></i></a>
 </div>
 </div>
 </section>
@@ -1250,16 +1250,16 @@ else if (num === 3) {
 </section>
 
 `;
-  document.getElementById("home").insertAdjacentHTML("afterbegin", bodycnt);
-  // document.querySelectorAll(".navbar")[1].remove();
-  // document.querySelector(".whole").remove();
-  // document.querySelector("#footer").remove();
+    document.getElementById("home").insertAdjacentHTML("afterbegin", bodycnt);
+    // document.querySelectorAll(".navbar")[1].remove();
+    // document.querySelector(".whole").remove();
+    // document.querySelector("#footer").remove();
 
-  $(document).ready(function () {
+    $(document).ready(function () {
       //javascript for navigation bar effects on scroll
       window.addEventListener("scroll", function () {
-          const header = document.querySelector("header");
-          header.classList.toggle('sticky', window.scrollY > 0);
+        const header = document.querySelector("header");
+        header.classList.toggle('sticky', window.scrollY > 0);
       });
 
       //javascript for responsive navigation sidebar menu
@@ -1268,47 +1268,47 @@ else if (num === 3) {
       const navigationItems = document.querySelectorAll(".navigation a")
 
       menuBtn.addEventListener("click", () => {
-          menuBtn.classList.toggle("active");
-          navigation.classList.toggle("active");
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
       });
 
       navigationItems.forEach((navigationItem) => {
-          navigationItem.addEventListener("click", () => {
-              menuBtn.classList.remove("active");
-              navigation.classList.remove("active");
-          });
+        navigationItem.addEventListener("click", () => {
+          menuBtn.classList.remove("active");
+          navigation.classList.remove("active");
+        });
       });
 
       //javascript for scroll to top button
       const scrollBtn = document.querySelector(".scrollToTop-btn");
 
       window.addEventListener("scroll", function () {
-          scrollBtn.classList.toggle("active", window.scrollY > 500);
+        scrollBtn.classList.toggle("active", window.scrollY > 500);
       });
 
       //javascript for scroll back to top on click scroll-to-top button
       scrollBtn.addEventListener("click", () => {
-          document.body.scrollTop = 0;
-          document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
       });
 
       //javascript for reveal website elements on scroll
       window.addEventListener("scroll", reveal);
 
       function reveal() {
-          var reveals = document.querySelectorAll(".reveal");
+        var reveals = document.querySelectorAll(".reveal");
 
-          for (var i = 0; i < reveals.length; i++) {
-              var windowHeight = window.innerHeight;
-              var revealTop = reveals[i].getBoundingClientRect().top;
-              var revealPoint = 50;
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var revealTop = reveals[i].getBoundingClientRect().top;
+          var revealPoint = 50;
 
-              if (revealTop < windowHeight - revealPoint) {
-                  reveals[i].classList.add("active");
-              }
+          if (revealTop < windowHeight - revealPoint) {
+            reveals[i].classList.add("active");
           }
+        }
       }
-  }
+    }
       // $(document).ready(function () {
       //   $(window).scroll(function () {
       //     // sticky navbar on scroll script
@@ -1381,13 +1381,13 @@ else if (num === 3) {
       //       }
       //     }
       //   });
-  );
-}
-else if (num === 4) {
+    );
+  }
+  else if (num === 4) {
 
-  document.getElementsByTagName("title")[0].innerHTML = `Harsh - Personal Website`;
-  document.getElementById('css_sheet').setAttribute('href', `./style/${num}/${num}.css`);
-  const headlink = `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    document.getElementsByTagName("title")[0].innerHTML = `Harsh - Personal Website`;
+    document.getElementById('css_sheet').setAttribute('href', `./style/${num}/${num}.css`);
+    const headlink = `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/script.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -1395,14 +1395,14 @@ else if (num === 4) {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>`;
-  document.getElementById("css_sheet").insertAdjacentHTML("afterend", headlink);
+    document.getElementById("css_sheet").insertAdjacentHTML("afterend", headlink);
 
-  // const scrhead=`<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  // <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
-  // <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>`;
-  // document.querySelector("footer").insertAdjacentHTML("afterend",scrhead);
+    // const scrhead=`<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    // <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    // <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>`;
+    // document.querySelector("footer").insertAdjacentHTML("afterend",scrhead);
 
-  const bodycnt = ` <div class="scrollToTop-btn">
+    const bodycnt = ` <div class="scrollToTop-btn">
 <i class="fas fa-angle-up"></i>
 </div>
 
@@ -1428,9 +1428,9 @@ else if (num === 4) {
 </div>
 <a href="#work" class="btn">See My Work</a>
 <div class="media-icons">
-  <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
-  <a href="www.instagram.com"><i class="fab fa-instagram"></i></a>
-  <a href="www.twitter.com"><i class="fab fa-twitter"></i></a>
+  <a href="#"><i class="fab fa-facebook-f"></i></a>
+  <a href="#"><i class="fab fa-instagram"></i></a>
+  <a href="#"><i class="fab fa-twitter"></i></a>
 </div>
 </div>
 </section>
@@ -1595,16 +1595,16 @@ else if (num === 4) {
 </section>
 
 `;
-  document.getElementById("home").insertAdjacentHTML("afterbegin", bodycnt);
-  // document.querySelectorAll(".navbar")[1].remove();
-  // document.querySelector(".whole").remove();
-  // document.querySelector("#footer").remove();
+    document.getElementById("home").insertAdjacentHTML("afterbegin", bodycnt);
+    // document.querySelectorAll(".navbar")[1].remove();
+    // document.querySelector(".whole").remove();
+    // document.querySelector("#footer").remove();
 
-  $(document).ready(function () {
+    $(document).ready(function () {
       //javascript for navigation bar effects on scroll
       window.addEventListener("scroll", function () {
-          const header = document.querySelector("header");
-          header.classList.toggle('sticky', window.scrollY > 0);
+        const header = document.querySelector("header");
+        header.classList.toggle('sticky', window.scrollY > 0);
       });
 
       //javascript for responsive navigation sidebar menu
@@ -1613,47 +1613,47 @@ else if (num === 4) {
       const navigationItems = document.querySelectorAll(".navigation a")
 
       menuBtn.addEventListener("click", () => {
-          menuBtn.classList.toggle("active");
-          navigation.classList.toggle("active");
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
       });
 
       navigationItems.forEach((navigationItem) => {
-          navigationItem.addEventListener("click", () => {
-              menuBtn.classList.remove("active");
-              navigation.classList.remove("active");
-          });
+        navigationItem.addEventListener("click", () => {
+          menuBtn.classList.remove("active");
+          navigation.classList.remove("active");
+        });
       });
 
       //javascript for scroll to top button
       const scrollBtn = document.querySelector(".scrollToTop-btn");
 
       window.addEventListener("scroll", function () {
-          scrollBtn.classList.toggle("active", window.scrollY > 500);
+        scrollBtn.classList.toggle("active", window.scrollY > 500);
       });
 
       //javascript for scroll back to top on click scroll-to-top button
       scrollBtn.addEventListener("click", () => {
-          document.body.scrollTop = 0;
-          document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
       });
 
       //javascript for reveal website elements on scroll
       window.addEventListener("scroll", reveal);
 
       function reveal() {
-          var reveals = document.querySelectorAll(".reveal");
+        var reveals = document.querySelectorAll(".reveal");
 
-          for (var i = 0; i < reveals.length; i++) {
-              var windowHeight = window.innerHeight;
-              var revealTop = reveals[i].getBoundingClientRect().top;
-              var revealPoint = 50;
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var revealTop = reveals[i].getBoundingClientRect().top;
+          var revealPoint = 50;
 
-               if (revealTop < windowHeight - revealPoint) {
-                  reveals[i].classList.add("active");
-              }
+          if (revealTop < windowHeight - revealPoint) {
+            reveals[i].classList.add("active");
           }
+        }
       }
-  }
+    }
       // $(document).ready(function () {
       //   $(window).scroll(function () {
       //     // sticky navbar on scroll script
@@ -1726,13 +1726,13 @@ else if (num === 4) {
       //       }
       //     }
       //   });
-  );
-}
-else if (num === 5) {
+    );
+  }
+  else if (num === 5) {
 
-  document.getElementsByTagName("title")[0].innerHTML = `Harsh - Personal Website`;
-  document.getElementById('css_sheet').setAttribute('href', `./style/${num}/${num}.css`);
-  const headlink = `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    document.getElementsByTagName("title")[0].innerHTML = `Harsh - Personal Website`;
+    document.getElementById('css_sheet').setAttribute('href', `./style/${num}/${num}.css`);
+    const headlink = `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/script.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -1740,14 +1740,14 @@ else if (num === 5) {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>`;
-  document.getElementById("css_sheet").insertAdjacentHTML("afterend", headlink);
+    document.getElementById("css_sheet").insertAdjacentHTML("afterend", headlink);
 
-  // const scrhead=`<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  // <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
-  // <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>`;
-  // document.querySelector("footer").insertAdjacentHTML("afterend",scrhead);
+    // const scrhead=`<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    // <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    // <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>`;
+    // document.querySelector("footer").insertAdjacentHTML("afterend",scrhead);
 
-  const bodycnt = ` <div class="scrollToTop-btn">
+    const bodycnt = ` <div class="scrollToTop-btn">
 <i class="fas fa-angle-up"></i>
 </div>
 
@@ -1773,9 +1773,9 @@ else if (num === 5) {
 </div>
 <a href="#work" class="btn">See My Work</a>
 <div class="media-icons">
-  <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
-  <a href="www.instagram.com"><i class="fab fa-instagram"></i></a>
-  <a href="www.twitter.com"><i class="fab fa-twitter"></i></a>
+  <a href="#"><i class="fab fa-facebook-f"></i></a>
+  <a href="#"><i class="fab fa-instagram"></i></a>
+  <a href="#"><i class="fab fa-twitter"></i></a>
 </div>
 </div>
 </section>
@@ -1940,16 +1940,16 @@ else if (num === 5) {
 </section>
 
 `;
-  document.getElementById("home").insertAdjacentHTML("afterbegin", bodycnt);
-  // document.querySelectorAll(".navbar")[1].remove();
-  // document.querySelector(".whole").remove();
-  // document.querySelector("#footer").remove();
+    document.getElementById("home").insertAdjacentHTML("afterbegin", bodycnt);
+    // document.querySelectorAll(".navbar")[1].remove();
+    // document.querySelector(".whole").remove();
+    // document.querySelector("#footer").remove();
 
-  $(document).ready(function () {
+    $(document).ready(function () {
       //javascript for navigation bar effects on scroll
       window.addEventListener("scroll", function () {
-          const header = document.querySelector("header");
-          header.classList.toggle('sticky', window.scrollY > 0);
+        const header = document.querySelector("header");
+        header.classList.toggle('sticky', window.scrollY > 0);
       });
 
       //javascript for responsive navigation sidebar menu
@@ -1958,47 +1958,47 @@ else if (num === 5) {
       const navigationItems = document.querySelectorAll(".navigation a")
 
       menuBtn.addEventListener("click", () => {
-          menuBtn.classList.toggle("active");
-          navigation.classList.toggle("active");
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
       });
 
       navigationItems.forEach((navigationItem) => {
-          navigationItem.addEventListener("click", () => {
-              menuBtn.classList.remove("active");
-              navigation.classList.remove("active");
-          });
+        navigationItem.addEventListener("click", () => {
+          menuBtn.classList.remove("active");
+          navigation.classList.remove("active");
+        });
       });
 
       //javascript for scroll to top button
       const scrollBtn = document.querySelector(".scrollToTop-btn");
 
       window.addEventListener("scroll", function () {
-          scrollBtn.classList.toggle("active", window.scrollY > 500);
+        scrollBtn.classList.toggle("active", window.scrollY > 500);
       });
 
       //javascript for scroll back to top on click scroll-to-top button
       scrollBtn.addEventListener("click", () => {
-          document.body.scrollTop = 0;
-          document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
       });
 
       //javascript for reveal website elements on scroll
       window.addEventListener("scroll", reveal);
 
       function reveal() {
-          var reveals = document.querySelectorAll(".reveal");
+        var reveals = document.querySelectorAll(".reveal");
 
-          for (var i = 0; i < reveals.length; i++) {
-              var windowHeight = window.innerHeight;
-              var revealTop = reveals[i].getBoundingClientRect().top;
-              var revealPoint = 50;
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var revealTop = reveals[i].getBoundingClientRect().top;
+          var revealPoint = 50;
 
-               if (revealTop < windowHeight - revealPoint) {
-                  reveals[i].classList.add("active");
-              }
+          if (revealTop < windowHeight - revealPoint) {
+            reveals[i].classList.add("active");
           }
+        }
       }
-  }
+    }
       // $(document).ready(function () {
       //   $(window).scroll(function () {
       //     // sticky navbar on scroll script
@@ -2071,23 +2071,17 @@ else if (num === 5) {
       //       }
       //     }
       //   });
-  );
-}
-else if (num === 6) {
+    );
+  }
+  else if (num === 6) {
 
-  document.getElementsByTagName("title")[0].innerHTML = `pragya - Personal Website`;
-  document.getElementById('css_sheet').setAttribute('href', `./style/${num}/${num}.css`);
-  const headlink = `<link rel="stylesheet" href="all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script:wght@400;500&display=swap" rel="stylesheet">
+    document.getElementsByTagName("title")[0].innerHTML = `pragya - Personal Website`;
+    document.getElementById('css_sheet').setAttribute('href', `./style/${num}/${num}.css`);
+    const headlink = `<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">`;
-  document.getElementById("css_sheet").insertAdjacentHTML("afterend", headlink);
+    document.getElementById("css_sheet").insertAdjacentHTML("afterend", headlink);
 
-  // const scrhead=`<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  // <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
-  // <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>`;
-  // document.querySelector("footer").insertAdjacentHTML("afterend",scrhead);
-
-  const bodycnt = ` <!-- main start  -->
+        const bodycnt = ` <!-- main start  -->
 <div class="main">
    <!-- header section starts...  -->
    <header class="header">
@@ -2100,7 +2094,7 @@ else if (num === 6) {
                    <div class="nav-inner">
                        <ul>
                            <li>
-                               <a href="#home" class="nav-item link-item">Home</a>
+                               <a href="#house" class="nav-item link-item">Home</a>
                            </li>
                            <li>
                               <a href="#about" class="nav-item link-item">Skills</a>
@@ -2126,7 +2120,7 @@ else if (num === 6) {
 
 
 
-  <section class="home-section align-items-center active" id="home">
+  <section class="home-section align-items-center active" id="house">
       <div class="container">
           <div class="row align-items-center">
               <div class="home-text">
@@ -2467,7 +2461,7 @@ Hello ,I am
           <div class="pp-header">
               <button type="button" class="btn pp-close">Close</button>
               <div class="pp-thumbnail">
-                  <img src="portfolio4.png" alt="">
+                  <img src="Images/portfolio4.jpg" alt="">
               </div>
               <h3>App Landing Page</h3>
           </div>
@@ -2492,23 +2486,23 @@ Hello ,I am
   </div>
 </div>
 ` ;
-document.getElementById("home").insertAdjacentHTML("afterbegin", bodycnt);
-  // document.querySelectorAll(".navbar")[1].remove();
-  // document.querySelector(".whole").remove();
-  // document.querySelector("#footer").remove();
-  $(document).ready(function () {
+    document.getElementById("home").insertAdjacentHTML("afterbegin", bodycnt);
+    // document.querySelectorAll(".navbar")[1].remove();
+    // document.querySelector(".whole").remove();
+    // document.querySelector("#footer").remove();
+    $(document).ready(function () {
       const tabsContainer = document.querySelector(".about-tabs"),
-          aboutSection = document.querySelector(".about-section");
+        aboutSection = document.querySelector(".about-section");
 
 
       tabsContainer.addEventListener("click", (e) => {
-          if (e.target.classList.contains("tab-item") && !e.target.classList.contains("active")) {
-              tabsContainer.querySelector(".active").classList.remove("active");
-              e.target.classList.add("active");
-              const target = e.target.getAttribute("data-target");
-              aboutSection.querySelector(".tab-content.active").classList.remove("active");
-              aboutSection.querySelector(target).classList.add("active");
-          }
+        if (e.target.classList.contains("tab-item") && !e.target.classList.contains("active")) {
+          tabsContainer.querySelector(".active").classList.remove("active");
+          e.target.classList.add("active");
+          const target = e.target.getAttribute("data-target");
+          aboutSection.querySelector(".tab-content.active").classList.remove("active");
+          aboutSection.querySelector(target).classList.add("active");
+        }
 
 
       });
@@ -2516,82 +2510,77 @@ document.getElementById("home").insertAdjacentHTML("afterbegin", bodycnt);
 
       // portfolio section (for popup)...... 
       document.addEventListener("click", (e) => {
-          if (e.target.classList.contains("view-project-btn")) {
-              togglePortfolioPopup();
-              portfolioItemDetails(e.target.parentElement);
-          }
+        if (e.target.classList.contains("view-project-btn")) {
+          togglePortfolioPopup();
+          portfolioItemDetails(e.target.parentElement);
+        }
       })
       function togglePortfolioPopup() {
-          document.querySelector(".portfolio-popup").classList.toggle("open");
-          document.body.classList.toggle("hide-scrolling");
-          document.querySelector(".main").classList.toggle("fade-out");
+        document.querySelector(".portfolio-popup").classList.toggle("open");
+        document.body.classList.toggle("hide-scrolling");
+        document.querySelector(".main").classList.toggle("fade-out");
       }
       document.querySelector(".pp-close").addEventListener("click", togglePortfolioPopup);
 
 
 
       function portfolioItemDetails(portfolioItem) {
-          document.querySelector(".pp-thumbnail img").src =
-              portfolioItem.querySelector(".portfolio-item-thumbnail img").src;
+        document.querySelector(".pp-thumbnail img").src =
+          portfolioItem.querySelector(".portfolio-item-thumbnail img").src;
       }
 
 
       // toggler... 
       const navToggler = document.querySelector(".nav-toggler");
       navToggler.addEventListener("click", () => {
-          hideSection();
-          toggleNavbar();
-          document.body.classList.toggle("hide-scrolling");
+        hideSection();
+        toggleNavbar();
+        document.body.classList.toggle("hide-scrolling");
       });
       function hideSection() {
-          document.querySelector("section.active").classList.toggle("fade-out");
+        document.querySelector("section.active").classList.toggle("fade-out");
 
       }
       function toggleNavbar() {
-          document.querySelector(".header").classList.toggle("active");
+        document.querySelector(".header").classList.toggle("active");
       }
 
 
 
       // active section ..... 
       document.addEventListener("click", (e) => {
-          if (e.target.classList.contains("link-item") && e.target.hash !== "") {
+        if (e.target.classList.contains("link-item") && e.target.hash !== "") {
 
-              if (e.target.classList.contains("nav-item")) {
-                  toggleNavbar();
-              }
-              else {
-                  hideSection();
-                  document.body.classList.add("hide-scrolling");
-
-              }
-              setTimeout(() => {
-                  document.querySelector("section.active").classList.remove("active", "fade-out");
-                  document.querySelector(e.target.hash).classList.add("active");
-                  window.scrollTo(0, 0);
-                  document.body.classList.remove("hide-scrolling");
-
-              }, 500);
+          if (e.target.classList.contains("nav-item")) {
+            toggleNavbar();
           }
+          else {
+            hideSection();
+            document.body.classList.add("hide-scrolling");
+
+          }
+          setTimeout(() => {
+            document.querySelector("section.active").classList.remove("active", "fade-out");
+            document.querySelector(e.target.hash).classList.add("active");
+            window.scrollTo(0, 0);
+            document.body.classList.remove("hide-scrolling");
+
+          }, 500);
+        }
       });
+    }
+    );
   }
-);
-}
-else if (num === 7) {
+  else if (num === 7) {
 
-  document.getElementsByTagName("title")[0].innerHTML = `pragya - Personal Website`;
-  document.getElementById('css_sheet').setAttribute('href', `./style/${num}/${num}.css`);
-  const headlink = `<link rel="stylesheet" href="all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script:wght@400;500&display=swap" rel="stylesheet">
+    document.getElementsByTagName("title")[0].innerHTML = `pragya - Personal Website`;
+    document.getElementById('css_sheet').setAttribute('href', `./style/${num}/${num}.css`);
+    const headlink = `<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">`;
-  document.getElementById("css_sheet").insertAdjacentHTML("afterend", headlink);
+    document.getElementById("css_sheet").insertAdjacentHTML("afterend", headlink);
 
-  // const scrhead=`<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  // <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
-  // <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>`;
-  // document.querySelector("footer").insertAdjacentHTML("afterend",scrhead);
 
-  const bodycnt = ` <!-- main start  -->
+    const bodycnt = ` <!-- main start  -->
 <div class="main">
    <!-- header section starts...  -->
    <header class="header">
@@ -2604,7 +2593,7 @@ else if (num === 7) {
                    <div class="nav-inner">
                        <ul>
                            <li>
-                               <a href="#home" class="nav-item link-item">Home</a>
+                               <a href="#house" class="nav-item link-item">Home</a>
                            </li>
                            <li>
                               <a href="#about" class="nav-item link-item">Skills</a>
@@ -2630,7 +2619,7 @@ else if (num === 7) {
 
 
 
-  <section class="home-section align-items-center active" id="home">
+  <section class="home-section align-items-center active" id="house">
       <div class="container">
           <div class="row align-items-center">
               <div class="home-text">
@@ -2971,7 +2960,7 @@ Hello ,I am
           <div class="pp-header">
               <button type="button" class="btn pp-close">Close</button>
               <div class="pp-thumbnail">
-                  <img src="portfolio4.png" alt="">
+                  <img src="Images/portfolio4.jpg" alt="">
               </div>
               <h3>App Landing Page</h3>
           </div>
@@ -2996,23 +2985,23 @@ Hello ,I am
   </div>
 </div>
 ` ;
-document.getElementById("home").insertAdjacentHTML("afterbegin", bodycnt);
-  // document.querySelectorAll(".navbar")[1].remove();
-  // document.querySelector(".whole").remove();
-  // document.querySelector("#footer").remove();
-  $(document).ready(function () {
+    document.getElementById("home").insertAdjacentHTML("afterbegin", bodycnt);
+    // document.querySelectorAll(".navbar")[1].remove();
+    // document.querySelector(".whole").remove();
+    // document.querySelector("#footer").remove();
+    $(document).ready(function () {
       const tabsContainer = document.querySelector(".about-tabs"),
-          aboutSection = document.querySelector(".about-section");
+        aboutSection = document.querySelector(".about-section");
 
 
       tabsContainer.addEventListener("click", (e) => {
-          if (e.target.classList.contains("tab-item") && !e.target.classList.contains("active")) {
-              tabsContainer.querySelector(".active").classList.remove("active");
-              e.target.classList.add("active");
-              const target = e.target.getAttribute("data-target");
-              aboutSection.querySelector(".tab-content.active").classList.remove("active");
-              aboutSection.querySelector(target).classList.add("active");
-          }
+        if (e.target.classList.contains("tab-item") && !e.target.classList.contains("active")) {
+          tabsContainer.querySelector(".active").classList.remove("active");
+          e.target.classList.add("active");
+          const target = e.target.getAttribute("data-target");
+          aboutSection.querySelector(".tab-content.active").classList.remove("active");
+          aboutSection.querySelector(target).classList.add("active");
+        }
 
 
       });
@@ -3020,67 +3009,290 @@ document.getElementById("home").insertAdjacentHTML("afterbegin", bodycnt);
 
       // portfolio section (for popup)...... 
       document.addEventListener("click", (e) => {
-          if (e.target.classList.contains("view-project-btn")) {
-              togglePortfolioPopup();
-              portfolioItemDetails(e.target.parentElement);
-          }
+        if (e.target.classList.contains("view-project-btn")) {
+          togglePortfolioPopup();
+          portfolioItemDetails(e.target.parentElement);
+        }
       })
       function togglePortfolioPopup() {
-          document.querySelector(".portfolio-popup").classList.toggle("open");
-          document.body.classList.toggle("hide-scrolling");
-          document.querySelector(".main").classList.toggle("fade-out");
+        document.querySelector(".portfolio-popup").classList.toggle("open");
+        document.body.classList.toggle("hide-scrolling");
+        document.querySelector(".main").classList.toggle("fade-out");
       }
       document.querySelector(".pp-close").addEventListener("click", togglePortfolioPopup);
 
 
 
       function portfolioItemDetails(portfolioItem) {
-          document.querySelector(".pp-thumbnail img").src =
-              portfolioItem.querySelector(".portfolio-item-thumbnail img").src;
+        document.querySelector(".pp-thumbnail img").src =
+          portfolioItem.querySelector(".portfolio-item-thumbnail img").src;
       }
 
 
       // toggler... 
       const navToggler = document.querySelector(".nav-toggler");
       navToggler.addEventListener("click", () => {
-          hideSection();
-          toggleNavbar();
-          document.body.classList.toggle("hide-scrolling");
+        hideSection();
+        toggleNavbar();
+        document.body.classList.toggle("hide-scrolling");
       });
       function hideSection() {
-          document.querySelector("section.active").classList.toggle("fade-out");
+        document.querySelector("section.active").classList.toggle("fade-out");
 
       }
       function toggleNavbar() {
-          document.querySelector(".header").classList.toggle("active");
+        document.querySelector(".header").classList.toggle("active");
       }
 
 
 
       // active section ..... 
       document.addEventListener("click", (e) => {
-          if (e.target.classList.contains("link-item") && e.target.hash !== "") {
+        if (e.target.classList.contains("link-item") && e.target.hash !== "") {
 
-              if (e.target.classList.contains("nav-item")) {
-                  toggleNavbar();
-              }
-              else {
-                  hideSection();
-                  document.body.classList.add("hide-scrolling");
-
-              }
-              setTimeout(() => {
-                  document.querySelector("section.active").classList.remove("active", "fade-out");
-                  document.querySelector(e.target.hash).classList.add("active");
-                  window.scrollTo(0, 0);
-                  document.body.classList.remove("hide-scrolling");
-
-              }, 500);
+          if (e.target.classList.contains("nav-item")) {
+            toggleNavbar();
           }
+          else {
+            hideSection();
+            document.body.classList.add("hide-scrolling");
+
+          }
+          setTimeout(() => {
+            document.querySelector("section.active").classList.remove("active", "fade-out");
+            document.querySelector(e.target.hash).classList.add("active");
+            window.scrollTo(0, 0);
+            document.body.classList.remove("hide-scrolling");
+
+          }, 500);
+        }
       });
+    }
+    );
   }
-);
-}
- 
+  else if (num === 8) {
+
+    document.getElementsByTagName("title")[0].innerHTML = `Harshwardhan - Personal Website`;
+    document.getElementById('css_sheet').setAttribute('href', `./style/${num}/${num}.css`);
+    const headlink = `<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>`;
+    document.getElementById("css_sheet").insertAdjacentHTML("afterend", headlink);
+    const bodycnt = `<section id="main">
+<nav>
+    <!--logo--------------->
+    <a href="#" class="logo">
+        <img src="https://media.istockphoto.com/photos/abstract-technology-circles-with-global-connection-lines-energy-picture-id995595516?b=1&k=6&m=995595516&s=170x170&h=e7syk6BgDkLAd0EcgmqM8KgZutZq2nMGxaz_uF-UzLk="/>	
+    </a>
+    <!--menu-btn-------------->
+        <input class="menu-btn" type="checkbox" id="menu-btn">
+        <label class="menu-icon" for="menu-btn">
+            <span class="nav-icon"></span>
+        </label>
+    <!--menu-------------->
+    <ul class="menu">
+        <li><a href="#main">Home</a></li>	
+        <li><a href="#skills">Skills</a></li>	
+        <li><a href="#recent">Projects</a></li>	
+        <li><a href="#client">Past Recruiters</a></li>	
+        <li><a href="#contact">Contact</a></li>	
+    </ul>
+    <!--say-hey--------->
+    </nav>
+    </section>
+
+    <!--content----------------->
+<div class="content">
+<!--model--------------->
+<div class="model">
+<img src="Images/hc.jpg" alt="">	
+</div>
+<!--text-------------->
+<div class="main-text">
+    <h1>Hello, I am Harshwardhan</h1>
+    <p>I am an Electronics and Communicaation Engineer with an specialisation in Microcontroller Programming, IOT devices and Embedded Systems</p>
+<!--btn------->
+    <a href="#" class="portfolio-btn">See My Resume</a>
+</div>
+</div>
+
+<!--skills------------->
+<section id="skills">
+<!--text--------->
+<div class="skill-text">
+    <!--heading-->
+    <div class="skill-heading">
+    <span>My Skills</span>
+    <h2>My Experties</h2>
+    </div>
+    <!--skill-box-container----------->
+    <div class="s-box-container">
+    <!--skill-box-------------->
+    <div class="skill-box">
+    <!--icon------->
+    <div class="s-box-icon">
+        <i class="fab fa-html5"></i>
+    </div>
+    <!--skill-box-text--------->
+    <div class="s-box-text">
+    <strong>Interfacing with Arduino</strong>
+    <p>I have 3 month experience in Arduino programming and i have completed 30+ project.</p>
+    </div>
+    </div>
+    <!--skill-box-------------->
+    <div class="skill-box">
+    <!--icon------->
+    <div class="s-box-icon">
+        <i class="fab fa-css3-alt"></i>
+    </div>
+    <!--skill-box-text--------->
+    <div class="s-box-text">
+    <strong>MATLAB</strong>
+    <p>I have 1 month experience in MATLAB and Simulink.</p>
+    </div>
+    </div>
+    <!--skill-box-------------->
+    <div class="skill-box">
+    <!--icon------->
+    <div class="s-box-icon">
+        <i class="fab fa-js-square"></i>
+    </div>
+    <!--skill-box-text--------->
+    <div class="s-box-text">
+    <strong>C++</strong>
+    <p>I have 1 year experience in C++ and I write efficient programs in the language.</p>
+    </div>
+    </div>
+        
+        
+    </div>
+</div>
+<!--img--------------->
+<div class="skill-img">
+<img src="https://images.freeimages.com/images/small-previews/2f0/electronic-components-1243284.jpg"/>	
+</div>
+</section>
+
+
+ <!--recent-project---------------------------->
+<section id="recent">
+<!--heading--------------->
+<div class="recent-heading">
+<center><span>Recent</span></center>
+<h3>Recent projects and Publications</h3>
+</div>
+<!--img--------------->
+<div class="recent-img">
+    <img src="https://images.unsplash.com/photo-1561144257-e32e8efc6c4f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHJhc3BiZXJyeSUyMHBpfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60"/>	
+</div>
+<!--btn----------->
+<a href="#" class="recent-btn">Projects</a>
+</section>
+
+
+<!--client----------------------------------->
+<section id="client">
+<!--heading------->
+<div class="client-heading">
+<span>Comments</span>
+<h3>Reviews by Past Recruiters</h3>
+</div>
+<!--client-box-container--------------->
+<div class="c-box-container">
+<!--box-1----->	
+<div class="client-box">
+    <!--img-------->
+    <img src="https://www.logo.wine/a/logo/Indian_Space_Research_Organisation/Indian_Space_Research_Organisation-Logo.wine.svg"/>
+    <!--stars/reviews---------->
+    <div class="star">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+    </div>
+    <!--details/comment------>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quas dolore nam expedita, vitae aliquid quidem doloremque consectetur! Architecto, numquam. </p>
+    <!--btn--------->
+    <a href="#">Read More</a>
+</div>
+    <!--box-2----->	
+<div class="client-box">
+    <!--img-------->
+    <img src="https://image.shutterstock.com/image-photo/image-260nw-489388897.jpg"/>
+    <!--stars/reviews---------->
+    <div class="star">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+    </div>
+    <!--details/comment------>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam harum officiis quod amet sed aliquid, obcaecati rerum culpa commodi similique? </p>
+    <!--btn--------->
+    <a href="#">Read More</a>
+</div>
+    <!--box-3----->	
+<div class="client-box">
+    <!--img-------->
+    <img src="https://image.shutterstock.com/image-photo/image-260nw-1374132989.jpg"/>
+    <!--stars/reviews---------->
+    <div class="star">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+    </div>
+    <!--details/comment------>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt perferendis sed, qui atque vel obcaecati eaque consectetur laboriosam facilis minima? </p>
+    <!--btn--------->
+    <a href="#">Read More</a>
+</div>
+</div>
+</section>
+
+<!--contact------------------------->
+<section id="contact">
+<!--img-------->
+<img src="https://images.unsplash.com/photo-1580706483913-b6ea7db483a0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8ZWxlY3Ryb25pY3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60"/>
+<!--heading---------------->
+<h3>Give a chance to Work TOGETHER</h3>
+<!--input----------------->
+<!-- <div class="contact-input">
+    <input type="email" placeholder="harshwardhanchaube@gmail.com"/>
+    
+    <a href="#">Continue</a>
+</div>
+<br> -->
+
+<div class="contact-input">
+    <input type="Mobile number" placeholder="6397345368"/>
+    <a href="#">Call now</a>
+
+</div>
+<br>
+<div class="contact-input">
+    <input type="Github" placeholder="Git Hub"/>
+    <a href="#">Collab</a>
+
+</div>
+
+
+
+</section>
+
+<div class="contact-me">
+   <center> <a href="#"><img src="https://img.icons8.com/color/48/000000/twitter--v1.png " class="icons"></a>
+    &nbsp;&nbsp;<a href="#"><img src="https://img.icons8.com/fluent/48/000000/gmail-new.png" class="icons"></a>
+    &nbsp;&nbsp;<a href="#"><img src="https://img.icons8.com/fluent/48/000000/linkedin.png" class="icons"></a>
+    &nbsp;&nbsp;<a href="#"><img src="https://img.icons8.com/fluent/48/000000/facebook-new.png" class="icons"></a>
+    </center>  
+</div>`;
+document.getElementById("home").insertAdjacentHTML("afterbegin", bodycnt);
+  }
 }
 GetCssSheet(num);
