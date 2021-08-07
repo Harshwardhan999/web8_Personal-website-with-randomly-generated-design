@@ -1,6 +1,6 @@
-const num= Math.floor(Math.random()*8);
-console.log(num);
- 
+// const num= Math.floor(Math.random()*8);
+// console.log(num);
+ const num =8;
 function GetCssSheet(num) {
 
   if (num === 0) {
@@ -28,7 +28,9 @@ function GetCssSheet(num) {
 
 <header>
 <a href="#" class="brand">Vishal</a>
-<div class="menu-btn"></div>
+<div class="menu-btn">
+<i class="fas fa-bars"></i>
+</div>
 <div class="navigation">
   <a href="#main">Home</a>
   <a href="#about">About</a>
@@ -216,7 +218,7 @@ function GetCssSheet(num) {
 
 `;
     document.getElementById("home").insertAdjacentHTML("afterbegin", bodycnt);
-    // document.querySelectorAll(".navbar")[1].remove();
+    //  document.querySelectorAll(".navbar")[1].remove();
     // document.querySelector(".whole").remove();
     // document.querySelector("#footer").remove();
 
@@ -2227,7 +2229,7 @@ Hello ,I am
                           </div>
                         </div>
                     </div>
-<a href="#contact" class="btn">Contact me</a>
+
 <a href="#" class="btn link-item">Download CV</a>
                     
 
@@ -2726,7 +2728,6 @@ Hello ,I am
                           </div>
                         </div>
                     </div>
-<a href="#contact" class="btn">Contact me</a>
 <a href="#" class="btn link-item">Download CV</a>
                     
 
