@@ -11,7 +11,7 @@
 section{
   padding: 100px 200px;
 }
-
+/* styling of the class main */
 .main{
   position: relative;
   width: 100%;
@@ -413,6 +413,7 @@ body{
 .work .content .card .card-img img:hover{
   transform: scale(1.2);
 }
+/* Styling contact content  */
 .contact{
   background-color: black;
 }
@@ -525,7 +526,7 @@ body{
 .contact-form .input-box .send-btn:hover{
   background: #235bf6;
 }
-
+/* Styling of footer */
 .footer{
   background: #000016;
   color: #fff;
@@ -548,7 +549,7 @@ body{
   font-weight: 600;
   text-decoration: none;
 }
-
+/* Adding media queries to make the website responsive */
 @media (max-width: 1040px){
   header{
     padding: 12px 20px;
@@ -661,7 +662,7 @@ body{
     padding: 35px 40px;
   }
 }
-
+/* Working of button */
 .scrollToTop-btn{
   z-index: 999;
   position: fixed;
