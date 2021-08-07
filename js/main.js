@@ -1,4 +1,4 @@
-const num= Math.floor(Math.random()*8);
+const num= Math.floor(Math.random()*9);
 console.log(num);
  
 function GetCssSheet(num) {
