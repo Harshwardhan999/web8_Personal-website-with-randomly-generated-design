@@ -565,7 +565,7 @@ body{
   header .navigation.active{
     z-index: 888;
     position: fixed;
-    background: darkorange;
+    background: mediumturquoise;
     top: 0;
     right: 0;
     width: 380px;
@@ -579,15 +579,16 @@ body{
   }
 
   header .navigation a{
-    color: #000;
+    color: mediumturquoise;
     font-size: 1.2em;
     margin: 10px;
     padding: 0 20px;
     border-radius: 20px;
+    background: linen;
+    
   }
-
   header .navigation a:hover{
-    backgroundrcolor: cyan;
+    background: cyan;
     color: #fff;
     transition: 0.3s ease;
   }
