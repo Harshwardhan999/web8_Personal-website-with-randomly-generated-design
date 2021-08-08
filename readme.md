@@ -76,13 +76,7 @@ const iconlink = `<link rel="icon" href="./style/0/icon1.png" type="image/icon t
 ![App Screenshot](./preview/portfolio3.jpg)
 ![App Screenshot](./preview/portfolio4.jpg) 
 
-<!-- ![App Screenshot](https://github.com/Kuldeep-Singh-28/web8_Personal-website-with-randomly-generated-design/blob/main/preview/portfolio1.jpg)
 
-![App Screenshot](https://github.com/Kuldeep-Singh-28/web8_Personal-website-with-randomly-generated-design/blob/main/preview/portfolio2.jpg)
-
-![App Screenshot](https://github.com/Kuldeep-Singh-28/web8_Personal-website-with-randomly-generated-design/blob/main/preview/portfolio3.jpg)
-
-![App Screenshot](https://github.com/Kuldeep-Singh-28/web8_Personal-website-with-randomly-generated-design/blob/main/preview/portfolio4.jpg) -->
 
   
 ## THANK YOU!
