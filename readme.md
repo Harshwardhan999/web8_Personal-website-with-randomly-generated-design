@@ -71,11 +71,18 @@ const iconlink = `<link rel="icon" href="./style/0/icon1.png" type="image/icon t
   
 ## Screenshots
 
-![App Screenshot](preview/portfolio1.jpg)
+<!-- ![App Screenshot](preview/portfolio1.jpg)
 ![App Screenshot](preview\portfolio2.jpg)
 ![App Screenshot](preview\portfolio3.jpg)
-![App Screenshot](preview\portfolio4.jpg)
+![App Screenshot](preview\portfolio4.jpg) -->
 
+![App Screenshot](./previews/portfolio1.jpg)
+
+![App Screenshot](./previews/portfolio2.jpg)
+
+![App Screenshot](./previews/portfolio3.jpg)
+
+![App Screenshot](./previews/portfolio4.jpg)
 
   
 ## THANK YOU!
