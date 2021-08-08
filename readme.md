@@ -71,7 +71,7 @@ const iconlink = `<link rel="icon" href="./style/0/icon1.png" type="image/icon t
   
 ## Screenshots
 
-![App Screenshot](C:\Users\HARSH\Downloads\kuchbhi\web8_Personal-website-with-randomly-generated-design\preview\portfolio1.jpg)
+![App Screenshot](https://github.com/Kuldeep-Singh-28/web8_Personal-website-with-randomly-generated-design/blob/main/preview/portfolio1.jpg)
 ![App Screenshot](C:\Users\HARSH\Downloads\kuchbhi\web8_Personal-website-with-randomly-generated-design\preview\portfolio2.jpg)
 ![App Screenshot](C:\Users\HARSH\Downloads\kuchbhi\web8_Personal-website-with-randomly-generated-design\preview\portfolio3.jpg)
 ![App Screenshot](C:\Users\HARSH\Downloads\kuchbhi\web8_Personal-website-with-randomly-generated-design\preview\portfolio4.jpg)
