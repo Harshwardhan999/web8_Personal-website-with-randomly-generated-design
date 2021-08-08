@@ -71,7 +71,10 @@ const iconlink = `<link rel="icon" href="./style/0/icon1.png" type="image/icon t
   
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](./preview/portfolio1.jpg) 
+![App Screenshot](./preview/portfolio2.jpg)
+![App Screenshot](./preview/portfolio3.jpg)
+![App Screenshot](./preview/portfolio4.jpg)
 
   
 ## THANK YOU!
